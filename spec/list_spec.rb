@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Holiday::List do
+describe Holiday::MyList do
   before do
     new_time = Time.local(2014, 1, 29, 12, 0, 0)
     Timecop.freeze(new_time)
@@ -10,11 +10,11 @@ describe Holiday::List do
     Timecop.return
   end
 
-  subject { Holiday::List.list }
+  subject { Holiday::MyList.list }
 
   shared_context 'valid credentials' do
     before do
-      Holiday::List.configure do |config|
+      Holiday::MyList.configure do |config|
         config.id  = 'usa__en@holiday.calendar.google.com'
         config.key = 'A_GOOD_KEY'
       end
@@ -33,7 +33,7 @@ describe Holiday::List do
 
   context 'without credentials' do
     before do
-      Holiday::List.configure do |config|
+      Holiday::MyList.configure do |config|
         config.id  = nil
         config.key = nil
       end
@@ -48,7 +48,7 @@ describe Holiday::List do
 
   context 'without valid credentials' do
     before do
-      Holiday::List.configure do |config|
+      Holiday::MyList.configure do |config|
         config.id  = 'bad_id'
         config.key = 'bad_key'
       end

@@ -4,117 +4,159 @@ require 'active_record'
 require 'json'
 
 module Holiday
-  module List
-    module_function
-
-    def list
-      HolidayList.new.to_a
+  # MyList:
+  # Used to generate a list of upcoming holidays
+  class MyList
+    def self.list
+      new.to_a
     end
 
-    def configure
+    def self.configure
       yield configuration
     end
 
+    def self.configuration
+      @configuration ||= Configuration.new
+    end
+
+    def initialize
+      @request_string = GoogleCalendarRequestString.new configuration
+    end
+
+    def to_a
+      argument_error! if invalid_request?
+
+      json_response['items'].map do |item|
+        {
+          summary:    item['summary'],
+          start_date: Date.parse(item['start']['date']),
+          etag:       item['etag']
+        }
+      end
+    end
+
+    private
+
     def configuration
-      @configuration ||= HolidayList::Configuration.new
+      self.class.configuration
+    end
+
+    def argument_error!
+      fail ArgumentError, 'A valid google access key is required'
+    end
+
+    def invalid_request?
+      return false unless response_error
+      response_error['code'] == 400
+    end
+
+    def response
+      @response ||= HTTParty.get @request_string
+    end
+
+    def json_response
+      @json_response ||= JSON.parse(response.body)
+    end
+
+    def response_error
+      json_response['error']
     end
   end
 end
 
-class HolidayList
-  def to_a
-    argument_error! if invalid_request?
-    json_response['items'].map do |item|
-      {
-        summary:    item['summary'],
-        start_date: Date.parse(item['start']['date']),
-        etag:       item['etag']
-      }
+module Holiday
+  class MyList
+    # Configuration:
+    # Used to persist access token configurations
+    class Configuration
+      attr_accessor :id, :key
+
+      def configured?
+        !key.nil?
+      end
     end
   end
+end
 
-  class Configuration
-    attr_accessor :id, :key
-  end
+module Holiday
+  class MyList
+    # GoogleCalendarRequestString:
+    # Generates the google calendar api request string
+    class GoogleCalendarRequestString
+      URL_BASE ||= 'https://www.googleapis.com/calendar/v3/calendars'
 
-  private
+      attr_reader :id, :params
 
-  def argument_error!
-    fail ArgumentError, 'A valid google access key is required'
-  end
+      def initialize(configuration)
+        argument_error! unless configuration.configured?
 
-  def initialize
-    @calendar_request_string = GoogleCalendarRequestString.new
-  end
+        key = configuration.key
+        @id = configuration.id
 
-  def invalid_request?
-    return false unless response_error
-    response_error['code'] == 400
-  end
-
-  def response
-    @response ||= HTTParty.get @calendar_request_string
-  end
-
-  def json_response
-    @json_response ||= JSON.parse(response.body)
-  end
-
-  def response_error
-    json_response['error']
-  end
-
-  class GoogleCalendarRequestString
-    attr_reader :id, :params
-
-    def initialize
-      key     = Holiday::List.configuration.key
-      @id     = Holiday::List.configuration.id
-
-      fail ArgumentError, 'A valid google access key is required' unless key
-
-      @params = Params.new(key)
-    end
-
-    def to_str
-      "https://www.googleapis.com/calendar/v3/calendars/#{id}/events?#{params}"
-    end
-
-    class Params < ActiveRecord::Base
-      attr_reader :key, :time_min, :time_max
-
-      def initialize(key, time_options = {})
-        @key      = key
-        @time_min = time_options.fetch('start') { DateTime.now.to_s }
-        @time_max = time_options.fetch('end') { (DateTime.now + 1.year).to_s }
+        @params = Params.new(key)
       end
 
-      def to_s
-        {
-          key:          key,
-          orderBy:      order_by,
-          singleEvents: single_events,
-          timeMin:      time_min,
-          timeMax:      time_max
-        }.to_param
+      def to_str
+        "#{URL_BASE}/#{id}/events?#{params}"
       end
 
       private
 
-      def order_by
-        'startTime'
+      def argument_error!
+        fail ArgumentError, 'A valid google access key is required'
       end
+    end
+  end
+end
 
-      def single_events
-        true
-      end
+module Holiday
+  class MyList
+    class GoogleCalendarRequestString
+      # Params:
+      # Munges google calendar api request parameters
+      class Params < ActiveRecord::Base
+        attr_reader :key
 
-      def time_min
-        DateTime.now.to_s
-      end
+        def initialize(key, time_options = {})
+          @key     = key
+          @options = time_options
+        end
 
-      def time_max
-        (DateTime.now + 365).to_s
+        def to_s
+          {
+            key:          key,
+            orderBy:      order_by,
+            singleEvents: single_events,
+            timeMin:      time_min,
+            timeMax:      time_max
+          }.to_param
+        end
+
+        private
+
+        def time_min
+          @time_min ||= @options.fetch('start') { DateTime.now.to_s }
+        end
+
+        def time_max
+          @time_max ||= @options.fetch('end') { (DateTime.now + 1.year).to_s }
+        end
+
+        def order_by
+          'startTime'
+        end
+
+        def single_events
+          true
+        end
+
+        def time_min
+          DateTime.now.to_s
+        end
+
+        def time_max
+          (DateTime.now + 365).to_s
+        end
       end
     end
   end
