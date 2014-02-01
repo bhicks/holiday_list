@@ -4,8 +4,9 @@ class HolidayList
   module RequestException
     private
 
-    def argument_error!
-      fail ArgumentError, 'A valid google access key is required'
+    def argument_error!(message = nil)
+      message ||= 'A valid google access key is required'
+      fail ArgumentError, message
     end
   end
 end
