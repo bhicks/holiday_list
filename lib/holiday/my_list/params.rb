@@ -1,10 +1,10 @@
-require 'active_record'
+require 'active_support/core_ext/object/to_query'
 
 module Holiday
   class MyList
     # Params:
     # Munges google calendar api request parameters
-    class Params < ActiveRecord::Base
+    class Params
       attr_reader :key
 
       def initialize(key, time_options = {})
@@ -19,7 +19,7 @@ module Holiday
           singleEvents: single_events,
           timeMin:      time_min,
           timeMax:      time_max
-        }.to_param
+        }.to_query
       end
 
       private
