@@ -1,14 +1,14 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'holiday/list/version'
+require 'holiday/my_list/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "holiday-list"
-  spec.version       = Holiday::List::VERSION
+  spec.name          = "holiday-my_list"
+  spec.version       = Holiday::MyList::VERSION
   spec.authors       = ["Ben Hicks"]
   spec.email         = ["benkhicks@gmail.com"]
-  spec.description   = %q{Holiday List}
+  spec.description   = %q{Holiday MyList}
   spec.summary       = %q{Connects to google calendar and retrieves holidays}
   spec.homepage      = ""
   spec.license       = "MIT"
