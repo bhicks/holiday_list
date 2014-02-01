@@ -1,4 +1,4 @@
-require 'holiday/my_list'
+require 'holiday_list'
 require 'vcr'
 require 'timecop'
 
