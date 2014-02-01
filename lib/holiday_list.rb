@@ -1,12 +1,15 @@
 require 'holiday_list/version'
 require 'holiday_list/configuration'
 require 'holiday_list/google_calendar_request_string'
+require 'holiday_list/request_exception'
 require 'httparty'
 require 'json'
 
 # MyList:
 # Used to generate a list of upcoming holidays
 class HolidayList
+  include RequestException
+
   def self.list
     new.to_a
   end
@@ -39,10 +42,6 @@ class HolidayList
 
   def configuration
     self.class.configuration
-  end
-
-  def argument_error!
-    fail ArgumentError, 'A valid google access key is required'
   end
 
   def invalid_request?
