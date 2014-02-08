@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in holiday-list.gemspec
+# Specify your gem's dependencies in holiday_list.gemspec
 gemspec
