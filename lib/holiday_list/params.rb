@@ -1,4 +1,5 @@
 require 'active_support/core_ext/object/to_query'
+require 'active_support/core_ext/date_time/calculations'
 
 class HolidayList
   # Params:
@@ -9,26 +10,32 @@ class HolidayList
     def initialize(key, time_options = {})
       @key     = key
       @options = time_options
+
+      validate_options!
     end
 
     def to_s
+      params_hash.to_query
+    end
+
+    def params_hash
       {
         key:          key,
         orderBy:      order_by,
         singleEvents: single_events,
         timeMin:      time_min,
         timeMax:      time_max
-      }.to_query
+      }
     end
 
     private
 
     def time_min
-      @time_min ||= @options.fetch('start') { DateTime.now.to_s }
+      @time_min ||= @options.fetch('start') { DateTime.now }
     end
 
     def time_max
-      @time_max ||= @options.fetch('end') { (DateTime.now + 1.year).to_s }
+      @time_max ||= @options.fetch('stop') { DateTime.now.next_year }
     end
 
     def order_by
@@ -39,12 +46,15 @@ class HolidayList
       true
     end
 
-    def time_min
-      DateTime.now.to_s
-    end
+    def validate_options!
+      message = 'Start and end dates must be valid DateTime objects that'\
+                ' occur sequentially'
 
-    def time_max
-      (DateTime.now + 365).to_s
+      fail ArgumentError, message if [time_min, time_max].any? do |time|
+        time.class != DateTime
+      end
+
+      fail ArgumentError, message if time_min > time_max
     end
   end
 end
