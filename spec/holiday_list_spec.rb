@@ -24,7 +24,7 @@ describe HolidayList do
   context 'with valid credentials' do
     include_context 'valid credentials'
 
-    it 'should generate a list' do
+    it 'generates a list' do
       VCR.use_cassette '01 29 2014 list' do
         expect(subject.length).to eq(30)
       end
@@ -39,7 +39,7 @@ describe HolidayList do
       end
     end
 
-    it 'should raise an argument error' do
+    it 'raises an argument error' do
       VCR.use_cassette 'no google access key' do
         expect { subject.first }.to raise_error(ArgumentError)
       end
@@ -54,7 +54,7 @@ describe HolidayList do
       end
     end
 
-    it 'should raise an error' do
+    it 'raises an error' do
       VCR.use_cassette 'bad google access_key' do
         expect { subject.first }.to raise_error(ArgumentError)
       end
@@ -70,11 +70,11 @@ describe HolidayList do
       end
     end
 
-    it 'summary should be Groundhog Day' do
+    it 'summary is Groundhog Day' do
       expect(holiday[:summary]).to eq('Groundhog Day')
     end
 
-    it 'start date should be valid' do
+    it 'start date is valid' do
       groundhog_day = Date.parse('2014-02-02')
       expect(holiday[:start_date]).to eq groundhog_day
     end
