@@ -5,7 +5,7 @@ class HolidayList
     attr_accessor :id, :key
 
     def configured?
-      !key.nil?
+      !id.nil? && !key.nil?
     end
   end
 end
