@@ -40,10 +40,14 @@ class HolidayList
 
   private
 
+  # TODO:
+  # this method seems redundant with self.configuration as well
   def configuration
     self.class.configuration
   end
 
+  # TODO:
+  # methods below are only used in #to_a, and are prime candidates for an extract class refactoring
   def invalid_request?
     return false unless response_error
     response_error['code'] == 400
