@@ -2,7 +2,7 @@ require 'holiday_list/version'
 require 'holiday_list/configuration'
 require 'holiday_list/google_calendar_request_string'
 require 'holiday_list/request_exception'
-require 'httparty'
+require 'faraday'
 require 'json'
 
 # MyList:
@@ -50,7 +50,10 @@ class HolidayList
   end
 
   def response
-    @response ||= HTTParty.get @request_string
+    conn = Faraday.new(url: GoogleCalendarRequestString::URL_BASE) do |faraday|
+      faraday.adapter Faraday.default_adapter
+    end
+    conn.get @request_string.to_str
   end
 
   def json_response

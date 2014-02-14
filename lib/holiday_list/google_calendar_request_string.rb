@@ -7,7 +7,8 @@ class HolidayList
   class GoogleCalendarRequestString
     include RequestException
 
-    URL_BASE ||= 'https://www.googleapis.com/calendar/v3/calendars'
+    URL_BASE ||= 'https://www.googleapis.com'
+    URL_PATH ||= '/calendar/v3/calendars'
 
     attr_reader :id, :params
 
@@ -21,7 +22,7 @@ class HolidayList
     end
 
     def to_str
-      "#{URL_BASE}/#{id}/events?#{params}"
+      "#{URL_PATH}/#{id}/events?#{params}"
     end
   end
 end
