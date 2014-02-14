@@ -27,3 +27,17 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Todo
+
+- initializer
+- replace httparty with faraday
+- Travis ci build
+- Code complete
+- Test coverage
+- rename?
+- clean up readme
+- connect to more google public calendars
+- connect to private google calendars
+- connect to non google calendars
+- store data in redis
