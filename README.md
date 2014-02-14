@@ -31,12 +31,15 @@ TODO: Write usage instructions here
 ## Todo
 
 - initializer
-- replace httparty with faraday
 - Travis ci build
 - Code complete
 - Test coverage
 - rename?
 - clean up readme
+- ~~replace httparty with faraday~~
+
+### Its nice to want things
+
 - connect to more google public calendars
 - connect to private google calendars
 - connect to non google calendars
