@@ -32,7 +32,7 @@ describe HolidayList::GoogleCalendarRequestString do
     end
   end
 
-  describe '#to_str' do
+  describe '#to_s' do
     let(:params) { double('Params') }
 
     before do
@@ -41,7 +41,7 @@ describe HolidayList::GoogleCalendarRequestString do
 
     it 'uses Params' do
       params.should_receive(:to_s)
-      subject.to_str
+      subject.to_s
     end
   end
 end

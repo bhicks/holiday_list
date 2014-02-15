@@ -32,7 +32,7 @@ class HolidayList
       @params = Params.new(key)
     end
 
-    def to_str
+    def to_s
       "#{url_path}/#{id}/events?#{params}"
     end
   end

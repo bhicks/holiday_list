@@ -49,7 +49,7 @@ class HolidayList
 
   def response
     conn = Faraday.new url: GoogleCalendarRequestString.url_base
-    conn.get @request_string.to_str
+    conn.get @request_string.to_s
   end
 
   def json_response
