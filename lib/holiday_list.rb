@@ -23,7 +23,7 @@ class HolidayList
   end
 
   def initialize
-    @request_string = GoogleCalendarRequestString.new configuration
+    @request_string = GoogleCalendarRequestString.new self.class.configuration
   end
 
   def to_a
@@ -39,12 +39,6 @@ class HolidayList
   end
 
   private
-
-  # TODO:
-  # this method seems redundant with self.configuration as well
-  def configuration
-    self.class.configuration
-  end
 
   # TODO:
   # methods below are only used in #to_a, and are prime candidates for an extract class refactoring
