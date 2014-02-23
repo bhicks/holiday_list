@@ -40,8 +40,7 @@ class HolidayList
 
   private
 
-  # TODO:
-  # methods below are only used in #to_a, and are prime candidates for an extract class refactoring
+  # TODO: methods below are only used in #to_a, and are prime candidates for an extract class refactoring
   def invalid_request?
     return false unless response_error
     response_error['code'] == 400

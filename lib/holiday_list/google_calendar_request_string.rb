@@ -7,7 +7,7 @@ class HolidayList
   class GoogleCalendarRequestString
     include RequestException
 
-    # TODO:
+    # TODO: address these items:
     # - make class more extensible
     # - rename class, redundat String, and is it really a 'Request'?
     # - don't think 'to_str' is working. should work like:
