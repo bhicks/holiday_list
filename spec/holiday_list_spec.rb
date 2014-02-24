@@ -1,12 +1,13 @@
 require 'spec_helper'
 
 describe HolidayList do
-  before do
-    new_time = Time.local(2014, 1, 29, 12, 0, 0)
+  before(:all) do
+    Time.zone = 'Central Time (US & Canada)'
+    new_time = Time.zone.local(2014, 1, 29, 12, 0, 0)
     Timecop.freeze(new_time)
   end
 
-  after do
+  after(:all) do
     Timecop.return
   end
 
