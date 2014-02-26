@@ -28,4 +28,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock", "~> 1.15.0"
   spec.add_development_dependency "timecop"
   spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "dotenv"
+  spec.add_development_dependency "pry"
 end
