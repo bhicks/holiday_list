@@ -2,24 +2,30 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/calendar/v3/calendars/usa__en@holiday.calendar.google.com/events?key=A_GOOD_KEY&orderBy=startTime&singleEvents=true&timeMax=2015-01-29T12:00:00-06:00&timeMin=2014-01-29T12:00:00-06:00
+    uri: https://www.googleapis.com/calendar/v3/calendars/usa__en@holiday.calendar.google.com/events?key=A_GOOD_KEY&orderBy=startTime&singleEvents=true&timeMax=2015-01-29T18:00:00%2B00:00&timeMin=2014-01-29T18:00:00%2B00:00
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
       Expires:
-      - Wed, 29 Jan 2014 23:50:15 GMT
+      - Wed, 26 Feb 2014 04:49:30 GMT
       Date:
-      - Wed, 29 Jan 2014 23:50:15 GMT
+      - Wed, 26 Feb 2014 04:49:30 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"phDDQ2s3yNs6GGSEakaKkgSg5Ks/mKK8pc_7Vf7pQChP8X0717-mvns"'
+      - '"-kteSF26GsdKQ5bfmcd4H3_-u3g/R0ErOA_aNuY54kabK7v4WT8ByPY"'
       Content-Type:
       - application/json; charset=UTF-8
       X-Content-Type-Options:
@@ -29,7 +35,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '26986'
+      - '18797'
       Server:
       - GSE
       Alternate-Protocol:
@@ -39,88 +45,30 @@ http_interactions:
       string: |
         {
          "kind": "calendar#events",
-         "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/mKK8pc_7Vf7pQChP8X0717-mvns\"",
-         "summary": "US Holidays",
-         "description": "US Holidays",
-         "updated": "2014-01-29T23:49:50.376Z",
+         "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/R0ErOA_aNuY54kabK7v4WT8ByPY\"",
+         "summary": "Holidays in United States",
+         "description": "Holidays in United States",
+         "updated": "2014-02-26T04:49:05.402Z",
          "timeZone": "UTC",
          "accessRole": "reader",
          "items": [
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@0348dd6681a84b748c5bf3e18c4178e23c4d5c89",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20140214_60o30dr46so30c1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEAwMzQ4ZGQ2NjgxYTg0Yjc0OGM1YmYzZTE4YzQxNzhlMjNjNGQ1Yzg5IHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Groundhog Day",
-           "creator": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "organizer": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "start": {
-            "date": "2014-02-02"
-           },
-           "end": {
-            "date": "2014-02-03"
-           },
-           "visibility": "public",
-           "iCalUID": "h@0348dd6681a84b748c5bf3e18c4178e23c4d5c89@google.com",
-           "sequence": 1
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@d43c5974645b0ebac70472ad42430c102cef4150",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBkNDNjNTk3NDY0NWIwZWJhYzcwNDcyYWQ0MjQzMGMxMDJjZWY0MTUwIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Lincoln's Birthday",
-           "creator": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "organizer": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "start": {
-            "date": "2014-02-12"
-           },
-           "end": {
-            "date": "2014-02-13"
-           },
-           "visibility": "public",
-           "iCalUID": "h@d43c5974645b0ebac70472ad42430c102cef4150@google.com",
-           "sequence": 1
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@580a20bcfc3b1c5f9428b067fca1e75243921d4a",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEA1ODBhMjBiY2ZjM2IxYzVmOTQyOGIwNjdmY2ExZTc1MjQzOTIxZDRhIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDAyMTRfNjBvMzBkcjQ2c28zMGMxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
            "summary": "Valentine's Day",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -130,26 +78,26 @@ http_interactions:
             "date": "2014-02-15"
            },
            "visibility": "public",
-           "iCalUID": "h@580a20bcfc3b1c5f9428b067fca1e75243921d4a@google.com",
+           "iCalUID": "20140214_60o30dr46so30c1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@76c19cdf14e8f7b2d6f2ecf733419b72ca0223ca",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20140217_60o30dr570o30e1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEA3NmMxOWNkZjE0ZThmN2IyZDZmMmVjZjczMzQxOWI3MmNhMDIyM2NhIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Washington's Birthday (Presidents Day)",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDAyMTdfNjBvMzBkcjU3MG8zMGUxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
+           "summary": "Presidents' Day (Washington's Birthday)",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -159,26 +107,26 @@ http_interactions:
             "date": "2014-02-18"
            },
            "visibility": "public",
-           "iCalUID": "h@76c19cdf14e8f7b2d6f2ecf733419b72ca0223ca@google.com",
+           "iCalUID": "20140217_60o30dr570o30e1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@a1035a0556174ed82da98a1a4c938759b9ff6d67",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20140309_60o30c9o60o30dpj6sqj0dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBhMTAzNWEwNTU2MTc0ZWQ4MmRhOThhMWE0YzkzODc1OWI5ZmY2ZDY3IHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Daylight Saving Time Begins",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDAzMDlfNjBvMzBjOW82MG8zMGRwajZzcWowZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
+           "summary": "Daylight Saving Time starts",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -188,113 +136,55 @@ http_interactions:
             "date": "2014-03-10"
            },
            "visibility": "public",
-           "iCalUID": "h@a1035a0556174ed82da98a1a4c938759b9ff6d67@google.com",
+           "iCalUID": "20140309_60o30c9o60o30dpj6sqj0dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@6dd8e0bd26fdfa8abf822c0812b9b0e2aec22370",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20140413_60o30o9lc8o30c1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEA2ZGQ4ZTBiZDI2ZmRmYThhYmY4MjJjMDgxMmI5YjBlMmFlYzIyMzcwIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "St. Patrick's Day",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDA0MTNfNjBvMzBvOWxjOG8zMGMxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
+           "summary": "Thomas Jefferson's Birthday",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
-            "date": "2014-03-17"
+            "date": "2014-04-13"
            },
            "end": {
-            "date": "2014-03-18"
+            "date": "2014-04-14"
            },
            "visibility": "public",
-           "iCalUID": "h@6dd8e0bd26fdfa8abf822c0812b9b0e2aec22370@google.com",
+           "iCalUID": "20140413_60o30o9lc8o30c1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@729c56c5d6609eca939e637bd1ddbe7094df1613",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20140420_60o30dr660o30c1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEA3MjljNTZjNWQ2NjA5ZWNhOTM5ZTYzN2JkMWRkYmU3MDk0ZGYxNjEzIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "April Fool's Day",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDA0MjBfNjBvMzBkcjY2MG8zMGMxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
+           "summary": "Easter Sunday",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "start": {
-            "date": "2014-04-01"
-           },
-           "end": {
-            "date": "2014-04-02"
-           },
-           "visibility": "public",
-           "iCalUID": "h@729c56c5d6609eca939e637bd1ddbe7094df1613@google.com",
-           "sequence": 1
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@9b99d5a5e0200c8e4d691c1f77132ac4d08d4428",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEA5Yjk5ZDVhNWUwMjAwYzhlNGQ2OTFjMWY3NzEzMmFjNGQwOGQ0NDI4IHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Tax Day",
-           "creator": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "organizer": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "start": {
-            "date": "2014-04-15"
-           },
-           "end": {
-            "date": "2014-04-16"
-           },
-           "visibility": "public",
-           "iCalUID": "h@9b99d5a5e0200c8e4d691c1f77132ac4d08d4428@google.com",
-           "sequence": 1
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@b2b31860a4716c902fd24cd491363399b680e334",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBiMmIzMTg2MGE0NzE2YzkwMmZkMjRjZDQ5MTM2MzM5OWI2ODBlMzM0IHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Easter",
-           "creator": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "organizer": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -304,84 +194,26 @@ http_interactions:
             "date": "2014-04-21"
            },
            "visibility": "public",
-           "iCalUID": "h@b2b31860a4716c902fd24cd491363399b680e334@google.com",
+           "iCalUID": "20140420_60o30dr660o30c1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@5ec37a9d5b479a16e4c793e0b7f1052a11ff827e",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20140511_60o30dr560o30e1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEA1ZWMzN2E5ZDViNDc5YTE2ZTRjNzkzZTBiN2YxMDUyYTExZmY4MjdlIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Earth Day",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDA1MTFfNjBvMzBkcjU2MG8zMGUxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
+           "summary": "Mothers' Day",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "start": {
-            "date": "2014-04-22"
-           },
-           "end": {
-            "date": "2014-04-23"
-           },
-           "visibility": "public",
-           "iCalUID": "h@5ec37a9d5b479a16e4c793e0b7f1052a11ff827e@google.com",
-           "sequence": 1
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@203bf8a70c291d736bc8e775164837957f1daefa",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEAyMDNiZjhhNzBjMjkxZDczNmJjOGU3NzUxNjQ4Mzc5NTdmMWRhZWZhIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Cinco de Mayo",
-           "creator": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "organizer": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "start": {
-            "date": "2014-05-05"
-           },
-           "end": {
-            "date": "2014-05-06"
-           },
-           "visibility": "public",
-           "iCalUID": "h@203bf8a70c291d736bc8e775164837957f1daefa@google.com",
-           "sequence": 1
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@d2330a4dde0e7cf3c898befb5f34185b00f0b576",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBkMjMzMGE0ZGRlMGU3Y2YzYzg5OGJlZmI1ZjM0MTg1YjAwZjBiNTc2IHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Mother's Day",
-           "creator": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "organizer": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -391,26 +223,26 @@ http_interactions:
             "date": "2014-05-12"
            },
            "visibility": "public",
-           "iCalUID": "h@d2330a4dde0e7cf3c898befb5f34185b00f0b576@google.com",
+           "iCalUID": "20140511_60o30dr560o30e1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@bb85de43bc2efaa8712bf3a7ac4c8bedcbe29ae9",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20140526_60o30dr56co30e1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBiYjg1ZGU0M2JjMmVmYWE4NzEyYmYzYTdhYzRjOGJlZGNiZTI5YWU5IHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDA1MjZfNjBvMzBkcjU2Y28zMGUxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
            "summary": "Memorial Day",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -420,84 +252,26 @@ http_interactions:
             "date": "2014-05-27"
            },
            "visibility": "public",
-           "iCalUID": "h@bb85de43bc2efaa8712bf3a7ac4c8bedcbe29ae9@google.com",
+           "iCalUID": "20140526_60o30dr56co30e1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@409d44e6d0229eca927237d5ffe97dca80113f02",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20140615_60o30dr564o30c1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEA0MDlkNDRlNmQwMjI5ZWNhOTI3MjM3ZDVmZmU5N2RjYTgwMTEzZjAyIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "John F. Kennedy's Birthday",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDA2MTVfNjBvMzBkcjU2NG8zMGMxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
+           "summary": "Fathers' Day",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "start": {
-            "date": "2014-05-29"
-           },
-           "end": {
-            "date": "2014-05-30"
-           },
-           "visibility": "public",
-           "iCalUID": "h@409d44e6d0229eca927237d5ffe97dca80113f02@google.com",
-           "sequence": 1
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@20460e475c5fb69a56a74b392e3b207c79226724",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEAyMDQ2MGU0NzVjNWZiNjlhNTZhNzRiMzkyZTNiMjA3Yzc5MjI2NzI0IHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Flag Day",
-           "creator": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "organizer": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "start": {
-            "date": "2014-06-14"
-           },
-           "end": {
-            "date": "2014-06-15"
-           },
-           "visibility": "public",
-           "iCalUID": "h@20460e475c5fb69a56a74b392e3b207c79226724@google.com",
-           "sequence": 1
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@a00dbe3da741bb7c6903e6c4ffa3f247b70af1f5",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBhMDBkYmUzZGE3NDFiYjdjNjkwM2U2YzRmZmEzZjI0N2I3MGFmMWY1IHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Father's Day",
-           "creator": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "organizer": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -507,26 +281,26 @@ http_interactions:
             "date": "2014-06-16"
            },
            "visibility": "public",
-           "iCalUID": "h@a00dbe3da741bb7c6903e6c4ffa3f247b70af1f5@google.com",
+           "iCalUID": "20140615_60o30dr564o30c1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@fee84a8ca49e792e88b640c35fad9f13f8b6a860",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20140704_60o30dr470o30c1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBmZWU4NGE4Y2E0OWU3OTJlODhiNjQwYzM1ZmFkOWYxM2Y4YjZhODYwIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDA3MDRfNjBvMzBkcjQ3MG8zMGMxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
            "summary": "Independence Day",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -536,26 +310,26 @@ http_interactions:
             "date": "2014-07-05"
            },
            "visibility": "public",
-           "iCalUID": "h@fee84a8ca49e792e88b640c35fad9f13f8b6a860@google.com",
+           "iCalUID": "20140704_60o30dr470o30c1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@8dc019cce6cf7d8349309ea31625e42ce095f94b",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20140901_60o30dr5c4o30c1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEA4ZGMwMTljY2U2Y2Y3ZDgzNDkzMDllYTMxNjI1ZTQyY2UwOTVmOTRiIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDA5MDFfNjBvMzBkcjVjNG8zMGMxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
            "summary": "Labor Day",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -565,55 +339,27 @@ http_interactions:
             "date": "2014-09-02"
            },
            "visibility": "public",
-           "iCalUID": "h@8dc019cce6cf7d8349309ea31625e42ce095f94b@google.com",
+           "iCalUID": "20140901_60o30dr5c4o30c1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@ec09e7b9eab6e169890bdaff1c181fe5f91bbbe2",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20141013_60o30dr5c8o32e1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBlYzA5ZTdiOWVhYjZlMTY5ODkwYmRhZmYxYzE4MWZlNWY5MWJiYmUyIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Patriot Day",
-           "creator": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "organizer": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "start": {
-            "date": "2014-09-11"
-           },
-           "end": {
-            "date": "2014-09-12"
-           },
-           "visibility": "public",
-           "iCalUID": "h@ec09e7b9eab6e169890bdaff1c181fe5f91bbbe2@google.com",
-           "sequence": 1
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@c4f402ce1ba4390be30ac7b21f307b0303560133",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBjNGY0MDJjZTFiYTQzOTBiZTMwYWM3YjIxZjMwN2IwMzAzNTYwMTMzIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDEwMTNfNjBvMzBkcjVjOG8zMmUxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
            "summary": "Columbus Day",
+           "description": "Public holiday in: Alabama, Alaska, American Samoa, Arizona, Arkansas, Colorado, Connecticut, Delaware, District of Columbia, Georgia, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Northern Mariana Islands, Ohio, Oklahoma, Pennsylvania, Rhode Island, South Carolina, Tennessee, Utah, Vermont, Virgin Islands, Virginia, West Virginia, Wisconsin, Wyoming, Wake Island",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -623,26 +369,26 @@ http_interactions:
             "date": "2014-10-14"
            },
            "visibility": "public",
-           "iCalUID": "h@c4f402ce1ba4390be30ac7b21f307b0303560133@google.com",
+           "iCalUID": "20141013_60o30dr5c8o32e1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@f6a19f0fc6f5afa9dac0c47066cc568b1e4afc5e",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20141031_60o30dr4cko30c1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBmNmExOWYwZmM2ZjVhZmE5ZGFjMGM0NzA2NmNjNTY4YjFlNGFmYzVlIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDEwMzFfNjBvMzBkcjRja28zMGMxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
            "summary": "Halloween",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -652,26 +398,26 @@ http_interactions:
             "date": "2014-11-01"
            },
            "visibility": "public",
-           "iCalUID": "h@f6a19f0fc6f5afa9dac0c47066cc568b1e4afc5e@google.com",
+           "iCalUID": "20141031_60o30dr4cko30c1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@e2d9dc974b9ca7907a547b7c5d442da9dd11f736",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20141102_60o30c9o64o30dpj6sqj0dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBlMmQ5ZGM5NzRiOWNhNzkwN2E1NDdiN2M1ZDQ0MmRhOWRkMTFmNzM2IHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Daylight Saving Time Ends",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDExMDJfNjBvMzBjOW82NG8zMGRwajZzcWowZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
+           "summary": "Daylight Saving Time ends",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -681,55 +427,26 @@ http_interactions:
             "date": "2014-11-03"
            },
            "visibility": "public",
-           "iCalUID": "h@e2d9dc974b9ca7907a547b7c5d442da9dd11f736@google.com",
+           "iCalUID": "20141102_60o30c9o64o30dpj6sqj0dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@d75054f88aec585d20c225801a9d10026fcc53c7",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20141111_60o30dr568o30c1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBkNzUwNTRmODhhZWM1ODVkMjBjMjI1ODAxYTlkMTAwMjZmY2M1M2M3IHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Election Day",
-           "creator": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "organizer": {
-            "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
-            "self": true
-           },
-           "start": {
-            "date": "2014-11-04"
-           },
-           "end": {
-            "date": "2014-11-05"
-           },
-           "visibility": "public",
-           "iCalUID": "h@d75054f88aec585d20c225801a9d10026fcc53c7@google.com",
-           "sequence": 1
-          },
-          {
-           "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@d5901da7e1f6787741841589def05852709da66f",
-           "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBkNTkwMWRhN2UxZjY3ODc3NDE4NDE1ODlkZWYwNTg1MjcwOWRhNjZmIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDExMTFfNjBvMzBkcjU2OG8zMGMxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
            "summary": "Veterans Day",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -739,26 +456,26 @@ http_interactions:
             "date": "2014-11-12"
            },
            "visibility": "public",
-           "iCalUID": "h@d5901da7e1f6787741841589def05852709da66f@google.com",
+           "iCalUID": "20141111_60o30dr568o30c1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@c4b28eab8856a708fbeefa638a15d71979f9863c",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20141127_60o30dr5cco30e1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBjNGIyOGVhYjg4NTZhNzA4ZmJlZWZhNjM4YTE1ZDcxOTc5Zjk4NjNjIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Thanksgiving",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDExMjdfNjBvMzBkcjVjY28zMGUxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
+           "summary": "Thanksgiving Day",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -768,26 +485,26 @@ http_interactions:
             "date": "2014-11-28"
            },
            "visibility": "public",
-           "iCalUID": "h@c4b28eab8856a708fbeefa638a15d71979f9863c@google.com",
+           "iCalUID": "20141127_60o30dr5cco30e1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@3b0126208d8a6f686feeda2241947baf59766383",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20141224_60o30dr56ko30c1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEAzYjAxMjYyMDhkOGE2ZjY4NmZlZWRhMjI0MTk0N2JhZjU5NzY2MzgzIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDEyMjRfNjBvMzBkcjU2a28zMGMxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
            "summary": "Christmas Eve",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -797,26 +514,26 @@ http_interactions:
             "date": "2014-12-25"
            },
            "visibility": "public",
-           "iCalUID": "h@3b0126208d8a6f686feeda2241947baf59766383@google.com",
+           "iCalUID": "20141224_60o30dr56ko30c1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@d665058926ae0c6b8116f0da6599ab5f70bb4a78",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20141225_60o30dr56go30c1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBkNjY1MDU4OTI2YWUwYzZiODExNmYwZGE2NTk5YWI1ZjcwYmI0YTc4IHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Christmas",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDEyMjVfNjBvMzBkcjU2Z28zMGMxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
+           "summary": "Christmas Day",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -826,26 +543,26 @@ http_interactions:
             "date": "2014-12-26"
            },
            "visibility": "public",
-           "iCalUID": "h@d665058926ae0c6b8116f0da6599ab5f70bb4a78@google.com",
+           "iCalUID": "20141225_60o30dr56go30c1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@4d763a800bed3165c96fd74633c35d52584f356c",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20141231_60o30dr4coo30c1g60o30dr4ck",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEA0ZDc2M2E4MDBiZWQzMTY1Yzk2ZmQ3NDYzM2MzNWQ1MjU4NGYzNTZjIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNDEyMzFfNjBvMzBkcjRjb28zMGMxZzYwbzMwZHI0Y2sgdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
            "summary": "New Year's Eve",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -855,26 +572,26 @@ http_interactions:
             "date": "2015-01-01"
            },
            "visibility": "public",
-           "iCalUID": "h@4d763a800bed3165c96fd74633c35d52584f356c@google.com",
+           "iCalUID": "20141231_60o30dr4coo30c1g60o30dr4ck@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@c0be67b055836245ac78e245478757185b8681d5",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20150101_60o30dr46oo30c1g60o30dr4co",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBjMGJlNjdiMDU1ODM2MjQ1YWM3OGUyNDU0Nzg3NTcxODViODY4MWQ1IHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNTAxMDFfNjBvMzBkcjQ2b28zMGMxZzYwbzMwZHI0Y28gdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
            "summary": "New Year's Day",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -884,26 +601,26 @@ http_interactions:
             "date": "2015-01-02"
            },
            "visibility": "public",
-           "iCalUID": "h@c0be67b055836245ac78e245478757185b8681d5@google.com",
+           "iCalUID": "20150101_60o30dr46oo30c1g60o30dr4co@google.com",
            "sequence": 1
           },
           {
            "kind": "calendar#event",
-           "etag": "\"phDDQ2s3yNs6GGSEakaKkgSg5Ks/MTM5MTAzNDg3MDAwMDAwMA\"",
-           "id": "h@c830a2d257ae8a0515eb194d7e679f9c5eac8e8a",
+           "etag": "\"-kteSF26GsdKQ5bfmcd4H3_-u3g/MTM5MzM2MTMxNTAwMDAwMA\"",
+           "id": "20150119_60o30dr56oo30e1g60o30dr4co",
            "status": "confirmed",
-           "htmlLink": "https://www.google.com/calendar/event?eid=aEBjODMwYTJkMjU3YWU4YTA1MTVlYjE5NGQ3ZTY3OWY5YzVlYWM4ZThhIHVzYV9fZW5AaA",
-           "created": "2014-01-29T22:34:30.000Z",
-           "updated": "2014-01-29T22:34:30.000Z",
-           "summary": "Martin Luther King, Jr's Day",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MjAxNTAxMTlfNjBvMzBkcjU2b28zMGUxZzYwbzMwZHI0Y28gdXNhX19lbkBo",
+           "created": "2014-02-25T20:48:35.000Z",
+           "updated": "2014-02-25T20:48:35.000Z",
+           "summary": "Martin Luther King Day",
            "creator": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "organizer": {
             "email": "usa__en@holiday.calendar.google.com",
-            "displayName": "US Holidays",
+            "displayName": "Holidays in United States",
             "self": true
            },
            "start": {
@@ -913,7 +630,7 @@ http_interactions:
             "date": "2015-01-20"
            },
            "visibility": "public",
-           "iCalUID": "h@c830a2d257ae8a0515eb194d7e679f9c5eac8e8a@google.com",
+           "iCalUID": "20150119_60o30dr56oo30e1g60o30dr4co@google.com",
            "sequence": 1
           }
          ]

@@ -27,7 +27,7 @@ describe HolidayList do
 
     it 'generates a list' do
       VCR.use_cassette '01 29 2014 list' do
-        expect(subject.length).to eq(30)
+        expect(subject.length).to eq(20)
       end
     end
   end
@@ -71,13 +71,13 @@ describe HolidayList do
       end
     end
 
-    it 'summary is Groundhog Day' do
-      expect(holiday[:summary]).to eq('Groundhog Day')
+    it 'summary is Valentines Day' do
+      expect(holiday[:summary]).to eq("Valentine's Day")
     end
 
     it 'start date is valid' do
-      groundhog_day = Date.parse('2014-02-02')
-      expect(holiday[:start_date]).to eq groundhog_day
+      valentines_day = Date.parse('2014-02-14')
+      expect(holiday[:start_date]).to eq valentines_day
     end
   end
 end
