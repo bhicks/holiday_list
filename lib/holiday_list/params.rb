@@ -31,11 +31,11 @@ class HolidayList
     private
 
     def time_min
-      @time_min ||= @options.fetch('start') { DateTime.now }
+      @time_min ||= @options.fetch('start') { DateTime.now.new_offset(0) }
     end
 
     def time_max
-      @time_max ||= @options.fetch('stop') { DateTime.now.next_year }
+      @time_max ||= @options.fetch('stop') { DateTime.now.next_year.new_offset(0) }
     end
 
     def order_by
