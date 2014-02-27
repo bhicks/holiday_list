@@ -1,6 +1,7 @@
 require "bundler/gem_tasks"
 require "rspec/core"
 require "rspec/core/rake_task"
+require "dotenv"
 
 RSpec::Core::RakeTask.new
 
@@ -21,7 +22,15 @@ end
 # TODO: add task to automatically scrub GOOGLE_ACCESS_KEY from VCR cassettes,
 # replacing with the convention used in the tests, A_GOOD_KEY
 #
+namespace :spec do
+  desc 'Run RSpec, re-recording VCR cassettes'
+  task :rerecord do
+    Dotenv.load
+
+    ENV['RERECORD'] = 'true'
+    Rake::Task['spec'].execute
+  end
+end
+
 # TODO: add git pre-commit hook to prevent users from checking in
 # GOOGLE_ACCESS_KEY in VCR cassettes
-#
-# TODO: automate switching between dotenv and VCR cassettes.
