@@ -7,6 +7,7 @@ RSpec::Core::RakeTask.new
 task :default => :spec
 task :test    => :spec
 
+desc 'Launch irb with holiday_list required'
 task :console do
   require 'irb'
   require 'irb/completion'
