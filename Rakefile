@@ -17,11 +17,6 @@ task :console do
   IRB.start
 end
 
-# TODO: add task to clean vcr cassettes
-#
-# TODO: add task to automatically scrub GOOGLE_ACCESS_KEY from VCR cassettes,
-# replacing with the convention used in the tests, A_GOOD_KEY
-#
 namespace :spec do
   desc 'Run RSpec, re-recording VCR cassettes'
   task :rerecord do
@@ -29,6 +24,22 @@ namespace :spec do
 
     ENV['RERECORD'] = 'true'
     Rake::Task['spec'].execute
+    Rake::Task['spec:scrub'].execute
+  end
+
+  desc 'Scrub access key tokens'
+  task :scrub do
+    Dotenv.load
+
+    FileList.new('spec/vcr/cassettes/*.yml').each do |file|
+      next unless key = ENV['GOOGLE_ACCESS_KEY']
+
+      modified_file = File.open(file).read.gsub(/#{key}/, 'A_GOOD_KEY')
+
+      File.open(file, 'w') do |out|
+        out << modified_file
+      end
+    end
   end
 end
 
