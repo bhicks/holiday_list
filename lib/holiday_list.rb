@@ -5,6 +5,9 @@ require 'holiday_list/request_exception'
 require 'faraday'
 require 'json'
 
+# TODO:
+# add an initializer
+
 # MyList:
 # Used to generate a list of upcoming holidays
 class HolidayList
